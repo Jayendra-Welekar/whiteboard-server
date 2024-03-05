@@ -11,7 +11,6 @@ app.use(express.json())
 app.use(cors())
 console.log(process.env.MONGODB_URL)
 if(process.env.MONGODB_URL){
-
     mongoose.connect(process.env.MONGODB_URL)
     console.log("connected to mongoose")
 }
@@ -205,9 +204,6 @@ io.on('connection', (socket: Socket)=>{
 
 })
 
-httpServer.listen(3000, ()=>{
-    console.log("on port 3000")
-})
 
 app.get('/', (req, res)=>{
     res.json({"hello": "hello"})
@@ -247,6 +243,11 @@ app.get('/allBoards', (req, res)=>{
     res.status(200).json({allRooms})
 })
 
-// app.listen(3000, ()=>{
-//     console.log("servre active on port 3001")
-// })
+httpServer.listen(3000, ()=>{
+    console.log("on port 3000")
+})
+
+
+app.listen(3001, ()=>{
+    console.log("servre active on port 3001")
+})
