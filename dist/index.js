@@ -211,8 +211,9 @@ app.get('/allBoards', (req, res) => {
     });
     res.status(200).json({ allRooms });
 });
-
 httpServer.listen(3000, () => {
     console.log("on port 3000");
 });
-
+// app.listen(3001, ()=>{
+//     console.log("servre active on port 3001")
+// })
