@@ -181,6 +181,9 @@ io.on('connection', (socket) => {
 httpServer.listen(3000, () => {
     console.log("on port 3000");
 });
+app.get('/', (req, res) => {
+    res.json({ "hello": "hello" });
+});
 app.post('/newUser', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, email, password, id } = req.body;
     const newUser = yield User_1.default.create({

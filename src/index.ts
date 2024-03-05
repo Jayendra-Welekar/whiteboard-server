@@ -209,6 +209,10 @@ httpServer.listen(3000, ()=>{
     console.log("on port 3000")
 })
 
+app.get('/', (req, res)=>{
+    res.json({"hello": "hello"})
+})
+
 app.post('/newUser', async (req, res)=>{
     const {name, email, password, id} = req.body
     const newUser = await User.create({
